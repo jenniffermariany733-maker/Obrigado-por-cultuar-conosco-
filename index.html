@@ -20,7 +20,7 @@ body{
   position:relative;
 }
 
-/* Fundo escurecido para contraste */
+/* Fundo escurecido para contraste do texto */
 body::before{
   content:'';
   position:absolute;
@@ -51,8 +51,8 @@ body::before{
   text-shadow: 1px 1px 8px rgba(0,0,0,0.7);
 }
 
-/* FOTO DA SUA IMAGEM */
-.instagram-photo{
+/* SUA IMAGEM */
+.event-photo{
   width:100%;
   border-radius:15px;
   object-fit:cover;
@@ -60,7 +60,7 @@ body::before{
   box-shadow:0 0 25px rgba(225,48,108,0.5);
   transition: all 0.4s ease;
 }
-.instagram-photo:hover{
+.event-photo:hover{
   transform: scale(1.05);
   box-shadow:0 0 35px rgba(225,48,108,0.9);
 }
@@ -96,5 +96,26 @@ body::before{
   0%{opacity:0;transform:translateY(40px);}
   100%{opacity:1;transform:translateY(0);}
 }
-
 @keyframes pulse{
+  0%{box-shadow:0 0 20px rgba(225,48,108,0.6);}
+  100%{box-shadow:0 0 35px rgba(225,48,108,1);}
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>Obrigado por participar!</h1>
+  <p>Relembre um momento especial do nosso 4º Pré Congresso do grupo <b>Geração Kadosh</b>.</p>
+
+  <!-- SUA IMAGEM -->
+  <img src="Screenshot_20260310-162105~2.png" alt="Foto do culto" class="event-photo">
+
+  <!-- BOTÃO INSTAGRAM -->
+  <a href="https://www.instagram.com/kadosh_saleluz" target="_blank" class="instagram-button">
+    📸 @kadosh_saleluz
+  </a>
+</div>
+
+</body>
+</html>
