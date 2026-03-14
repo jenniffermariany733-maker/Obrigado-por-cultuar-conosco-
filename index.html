@@ -1,162 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lembrete • Geração Kadosh</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-<style>
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:
-    linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-    url("IMG-20260303-WA0006.jpg");
-  background-size:cover;
-  background-position:center;
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:white;
-  text-align:center;
-  padding:20px;
-}
-
-/* CARD */
-.card{
-  background:rgba(255,255,255,0.95);
-  color:#222;
-  padding:40px;
-  border-radius:20px;
-  max-width:520px;
-  box-shadow:0 10px 40px rgba(0,0,0,0.5);
-  animation:fadeUp 1s ease;
-}
-
-h1{font-size:40px;margin-top:0;}
-p{font-size:18px;line-height:1.6;}
-button{
-  margin-top:25px;
-  background:#c9a646;
-  border:none;
-  padding:16px 36px;
-  font-size:20px;
-  border-radius:10px;
-  cursor:pointer;
-  color:white;
-  font-weight:600;
-  transition:0.3s;
-}
-button:hover{
-  background:#b89535;
-  transform:scale(1.05);
-}
-
-/* MENSAGEM */
-.mensagem{
-  display:none;
-  background:rgba(0,0,0,0.9);
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  animation:fade 0.6s;
-}
-
-.conteudo{
-  background:white;
-  color:#222;
-  padding:40px;
-  border-radius:20px;
-  max-width:520px;
-  box-shadow:0 10px 40px rgba(0,0,0,0.5);
-  animation:fadeUp 0.8s;
-}
-
-/* SEMÁFORO */
-.semaforo{
-  width:60px;
-  margin:auto;
-  margin-bottom:20px;
-}
-.luz{
-  width:22px;
-  height:22px;
-  border-radius:50%;
-  margin:8px auto;
-  opacity:0.4;
-}
-.vermelho{background:#e53935;}
-.amarelo{background:#fdd835;}
-.verde{background:#43a047;}
-.ativa{opacity:1;box-shadow:0 0 12px rgba(0,0,0,0.4);}
-
-/* PASSOS */
-h2{font-size:34px;margin-top:0;}
-.passos{font-size:32px;font-weight:700;margin:25px 0;line-height:1.6;}
-.verso{margin-top:10px;font-style:italic;font-size:20px;}
-
-/* BOTÃO INSTAGRAM TOP */
-.instagram-button{
-  display:inline-block;
-  margin-top:25px;
-  padding:16px 32px;
-  background:#E1306C;
-  color:white;
-  font-size:20px;
-  font-weight:bold;
-  border-radius:12px;
-  text-decoration:none;
-  box-shadow:0 0 15px rgba(225,48,108,0.6);
-  transition:0.3s;
-  opacity:0;
-  transform:translateY(30px);
-  animation:fadeUp 1s forwards;
-  animation-delay:0.5s;
-}
-
-.instagram-button span{
-  margin-right:10px;
-  font-size:22px;
-}
-
-/* PULSAR */
-.instagram-button:hover{
-  transform:translateY(0) scale(1.1);
-  box-shadow:0 0 25px rgba(225,48,108,0.9);
-}
-.instagram-button.pulse{
-  animation: pulseGlow 1.5s infinite alternate;
-}
-
-/* ANIMAÇÕES */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(40px);}
-  to{opacity:1;transform:translateY(0);}
-}
-@keyframes fade{from{opacity:0;}to{opacity:1;}}
-@keyframes pulseGlow{
-  0%{box-shadow:0 0 15px rgba(225,48,108,0.6);}
-  100%{box-shadow:0 0 25px rgba(225,48,108,1);}
-}
-</style>
-</head>
-<body>
-
-<div class="card">
-  <h1>Lembrete</h1>
-  <p>Agradecemos sua participação no nosso <b>4º Pré Congresso</b> do grupo <b>Geração Kadosh</b>.</p>
-  <p>Clique abaixo e relembre uma mensagem importante deste culto.</p>
-  <button onclick="abrirMensagem()">Clique e relembre</button>
-</div>
-
+<!-- MENSAGEM SIMPLES, BOTÃO VISÍVEL -->
 <div class="mensagem" id="mensagem">
   <div class="conteudo">
     <div class="semaforo">
@@ -164,32 +6,41 @@ h2{font-size:34px;margin-top:0;}
       <div class="luz amarelo ativa"></div>
       <div class="luz verde ativa"></div>
     </div>
-    <h2>PARE • LEIA • DECIDA</h2>
+
+    <h2>Pare • Pense • Siga</h2>
+
     <div class="passos">
       🛑 PARE<br>
       ⚠️ PENSE<br>
       🟢 SIGA
     </div>
+
     <p class="verso">
       ⚠️ <b>“Alegra-te, jovem… mas sabe que de todas estas coisas Deus te pedirá contas..”</b><br>
       📖 Eclesiastes 11:9
     </p>
-    <p>A juventude é um tempo de alegria. Mas Deus nos lembra que cada escolha tem um caminho. Alegre-se, viva, sorria… mas nunca se esqueça de Deus. Amém?</p>
-    <p>Que a Palavra pregada neste <b>4º Pré Congresso do Geração Kadosh</b> permaneça em seu coração e na sua conduta.</p>
 
-    <!-- BOTÃO INSTAGRAM PULSANTE -->
-    <a href="https://www.instagram.com/kadosh_saleluz" target="_blank" class="instagram-button pulse">
-      <span>📸</span> @kadosh_saleluz
-    </a>
+    <p>
+      A juventude é um tempo de alegria. Mas Deus nos lembra que cada escolha tem um caminho. Alegre-se, viva, sorria… mas nunca se esqueça de Deus. Amém?
+    </p>
+
+    <p>
+      Que a Palavra pregada neste <b>4º Pré Congresso do Geração Kadosh</b> permaneça em seu coração e na sua conduta.
+    </p>
+
+    <!-- BOTÃO INSTAGRAM VISÍVEL -->
+    <div style="margin-top:30px;">
+      <a href="https://www.instagram.com/kadosh_saleluz" target="_blank"
+         style="display:inline-block;
+                padding:16px 32px;
+                background:#E1306C;
+                color:white;
+                font-size:20px;
+                font-weight:bold;
+                border-radius:12px;
+                text-decoration:none;">
+        📸 @kadosh_saleluz
+      </a>
+    </div>
   </div>
 </div>
-
-<script>
-function abrirMensagem(){
-  const msg = document.getElementById('mensagem');
-  msg.style.display='flex';
-}
-</script>
-
-</body>
-</html>
