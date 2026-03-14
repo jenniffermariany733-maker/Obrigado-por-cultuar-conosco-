@@ -1,147 +1,323 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pare • Pense • Siga</title>
+
+<title>Lembrete • Geração Kadosh</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 
+*{
+box-sizing:border-box;
+}
+
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#0b0b16;
+font-family:'Poppins',sans-serif;
+
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+url("IMG-20260303-WA0006.jpg");
+
+background-size:cover;
+background-position:center;
+
+height:100vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
 color:white;
 text-align:center;
-padding:30px;
-}
-
-.container{
-max-width:600px;
-margin:auto;
-}
-
-.titulo{
-font-size:32px;
-margin-bottom:30px;
-}
-
-.placa{
 padding:20px;
-margin:18px 0;
-border-radius:14px;
-font-size:26px;
-font-weight:bold;
 }
 
-.pare{
-background:#e53935;
+/* CARD */
+
+.card{
+
+background:rgba(255,255,255,0.95);
+color:#222;
+
+padding:40px;
+
+border-radius:20px;
+
+max-width:520px;
+
+box-shadow:0 10px 40px rgba(0,0,0,0.5);
+
+animation:fadeUp 1s ease;
 }
 
-.pense{
-background:#fdd835;
-color:black;
+h1{
+font-size:40px;
+margin-top:0;
 }
 
-.siga{
-background:#43a047;
-}
-
-.mensagem{
-background:#121212;
-padding:30px;
-border-radius:14px;
-margin-top:25px;
+p{
 font-size:18px;
 line-height:1.6;
 }
 
-.tema{
-color:#ffd54f;
-font-size:24px;
-margin-bottom:10px;
-font-weight:bold;
+button{
+
+margin-top:25px;
+
+background:#c9a646;
+border:none;
+
+padding:16px 36px;
+
+font-size:20px;
+
+border-radius:10px;
+
+cursor:pointer;
+
+color:white;
+
+font-weight:600;
+
+transition:0.3s;
 }
 
-.versiculo{
-color:#ccc;
-margin-bottom:15px;
+button:hover{
+background:#b89535;
+transform:scale(1.05);
+}
+
+/* TELA DA MENSAGEM */
+
+.mensagem{
+
+display:none;
+
+background:rgba(0,0,0,0.9);
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+align-items:center;
+justify-content:center;
+
+padding:20px;
+
+animation:fade 0.6s;
+}
+
+.conteudo{
+
+background:white;
+color:#222;
+
+padding:40px;
+
+border-radius:20px;
+
+max-width:520px;
+
+box-shadow:0 10px 40px rgba(0,0,0,0.5);
+
+animation:fadeUp 0.8s;
+}
+
+/* SEMÁFORO */
+
+.semaforo{
+
+width:60px;
+margin:auto;
+margin-bottom:20px;
+}
+
+.luz{
+
+width:22px;
+height:22px;
+
+border-radius:50%;
+
+margin:8px auto;
+
+opacity:0.4;
+}
+
+.vermelho{background:#e53935;}
+.amarelo{background:#fdd835;}
+.verde{background:#43a047;}
+
+.ativa{
+opacity:1;
+box-shadow:0 0 12px rgba(0,0,0,0.4);
+}
+
+/* TEXTO */
+
+h2{
+font-size:34px;
+margin-top:0;
+}
+
+.passos{
+
+font-size:32px;
+
+font-weight:700;
+
+margin:25px 0;
+
+line-height:1.6;
+}
+
+.verso{
+
+margin-top:10px;
+
+font-style:italic;
+
+font-size:20px;
 }
 
 .instagram{
-margin-top:30px;
+
+margin-top:25px;
+font-size:18px;
 }
 
 .instagram a{
-background:#e1306c;
-color:white;
-padding:15px 28px;
-border-radius:40px;
-text-decoration:none;
+
+color:#c9a646;
+
 font-weight:bold;
+
+text-decoration:none;
+
+font-size:20px;
 }
 
-footer{
-margin-top:40px;
-color:#aaa;
-font-size:14px;
+/* ANIMAÇÕES */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+@keyframes fade{
+
+from{opacity:0;}
+to{opacity:1;}
+
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
+<div class="card">
 
-<div class="titulo">
-🚦 Pare • Pense • Siga
+<h1>Lembrete</h1>
+
+<p>
+Agradecemos sua participação no nosso <b>4º Pré Congresso</b> do grupo <b>Geração Kadosh</b>.
+</p>
+
+<p>
+Clique abaixo e relembre uma mensagem importante deste culto.
+</p>
+
+<button onclick="abrirMensagem()">
+Clique e relembre
+</button>
+
 </div>
 
-<div class="placa pare">
-🛑 PARE
+<div class="mensagem" id="mensagem">
+
+<div class="conteudo">
+
+<div class="semaforo">
+
+<div class="luz vermelho ativa"></div>
+<div class="luz amarelo ativa"></div>
+<div class="luz verde ativa"></div>
+
 </div>
 
-<div class="placa pense">
-⚠️ PENSE
-</div>
+<h2>Pare • Pense • Siga</h2>
 
-<div class="placa siga">
+<div class="passos">
+
+🛑 PARE<br>
+⚠️ PENSE<br>
 🟢 SIGA
+
 </div>
 
-<div class="mensagem">
+<p class="verso">
 
-<div class="tema">
-⚠️ "Alegrem-se, mas lembrem-se"
-</div>
-
-<div class="versiculo">
+⚠️ <b>Alegre-se, jovem… mas lembra-te</b><br>
 📖 Eclesiastes 11:9
-</div>
 
-A juventude é tempo de alegria, sonhos e decisões.<br><br>
+</p>
 
-Deus nos permite viver com alegria, mas nunca devemos esquecer que cada escolha traz consequências.<br><br>
+<p>
 
-Alegre-se, viva e aproveite sua juventude…  
-mas faça isso com consciência e com Deus guiando seus caminhos.<br><br>
+Tudo que fazemos tem consequências.  
+Por isso siga se alegrando e vivendo, mas com consciência diante de Deus.
 
-🙏 Que a palavra pregada no <b>4º Pré-Congresso do Geração Kadosh</b> permaneça em seu coração.
+</p>
 
-</div>
+<p>
+
+Que a Palavra pregada neste <b>4º Pré Congresso do Geração Kadosh</b> permaneça em seu coração.
+
+</p>
 
 <div class="instagram">
+
+Veja as fotos do culto no Instagram 👇<br><br>
+
 <a href="https://www.instagram.com/kadosh_saleluz" target="_blank">
-📸 Ver fotos do culto
+
+@kadosh_saleluz
+
 </a>
-</div>
-
-<footer>
-Geração Kadosh • Assembleia de Deus Ministério Sal e Luz
-</footer>
 
 </div>
+
+</div>
+
+</div>
+
+<script>
+
+function abrirMensagem(){
+document.getElementById("mensagem").style.display="flex"
+}
+
+</script>
 
 </body>
 </html>
