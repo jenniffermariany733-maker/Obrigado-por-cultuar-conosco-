@@ -1,46 +1,100 @@
-<!-- MENSAGEM SIMPLES, BOTÃO VISÍVEL -->
-<div class="mensagem" id="mensagem">
-  <div class="conteudo">
-    <div class="semaforo">
-      <div class="luz vermelho ativa"></div>
-      <div class="luz amarelo ativa"></div>
-      <div class="luz verde ativa"></div>
-    </div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geração Kadosh • Lembrete</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+  font-family:'Poppins',sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  background: url('IMG-20260303-WA0006.jpg') center/cover no-repeat;
+  color:white;
+  padding:20px;
+  text-align:center;
+  position:relative;
+}
 
-    <h2>Pare • Pense • Siga</h2>
+/* Fundo escurecido para contraste */
+body::before{
+  content:'';
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.5);
+  z-index:0;
+}
 
-    <div class="passos">
-      🛑 PARE<br>
-      ⚠️ PENSE<br>
-      🟢 SIGA
-    </div>
+/* Conteúdo central */
+.card{
+  position:relative;
+  z-index:1;
+  max-width:500px;
+  animation:fadeInUp 1s ease;
+}
 
-    <p class="verso">
-      ⚠️ <b>“Alegra-te, jovem… mas sabe que de todas estas coisas Deus te pedirá contas..”</b><br>
-      📖 Eclesiastes 11:9
-    </p>
+/* Texto */
+.card h1{
+  font-size:32px;
+  margin-bottom:15px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+.card p{
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:20px;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.7);
+}
 
-    <p>
-      A juventude é um tempo de alegria. Mas Deus nos lembra que cada escolha tem um caminho. Alegre-se, viva, sorria… mas nunca se esqueça de Deus. Amém?
-    </p>
+/* FOTO DA SUA IMAGEM */
+.instagram-photo{
+  width:100%;
+  border-radius:15px;
+  object-fit:cover;
+  margin-bottom:20px;
+  box-shadow:0 0 25px rgba(225,48,108,0.5);
+  transition: all 0.4s ease;
+}
+.instagram-photo:hover{
+  transform: scale(1.05);
+  box-shadow:0 0 35px rgba(225,48,108,0.9);
+}
 
-    <p>
-      Que a Palavra pregada neste <b>4º Pré Congresso do Geração Kadosh</b> permaneça em seu coração e na sua conduta.
-    </p>
+/* BOTÃO INSTAGRAM */
+.instagram-button{
+  display:inline-block;
+  background:#E1306C;
+  color:white;
+  font-size:20px;
+  font-weight:bold;
+  padding:16px 32px;
+  border-radius:15px;
+  text-decoration:none;
+  box-shadow:0 0 20px rgba(225,48,108,0.6);
+  animation:pulse 1.5s infinite alternate;
+  transition: all 0.3s ease;
+}
+.instagram-button:hover{
+  transform: scale(1.08);
+  box-shadow:0 0 30px rgba(225,48,108,1);
+}
 
-    <!-- BOTÃO INSTAGRAM VISÍVEL -->
-    <div style="margin-top:30px;">
-      <a href="https://www.instagram.com/kadosh_saleluz" target="_blank"
-         style="display:inline-block;
-                padding:16px 32px;
-                background:#E1306C;
-                color:white;
-                font-size:20px;
-                font-weight:bold;
-                border-radius:12px;
-                text-decoration:none;">
-        📸 @kadosh_saleluz
-      </a>
-    </div>
-  </div>
-</div>
+/* RESPONSIVO */
+@media(max-width:520px){
+  .card h1{font-size:28px;}
+  .card p{font-size:16px;}
+  .instagram-button{font-size:18px;padding:14px 28px;}
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeInUp{
+  0%{opacity:0;transform:translateY(40px);}
+  100%{opacity:1;transform:translateY(0);}
+}
+
+@keyframes pulse{
